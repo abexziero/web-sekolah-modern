@@ -1,0 +1,43 @@
+{
+  "name": "ma-annur-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "node scripts/test-site.mjs preview",
+    "test:dashboard": "node scripts/test-site.mjs dashboard",
+    "test:backend": "node --test tests/backend/*.test.mjs",
+    "test:db": "node --env-file=.env.local --test --test-concurrency=1 tests/backend/*.integration.mjs",
+    "setup:local": "node scripts/setup-local.mjs",
+    "db:up": "docker compose --env-file .env.local up -d --wait database",
+    "db:test:up": "docker compose --env-file .env.local --profile test up -d --wait database-test",
+    "db:migrate": "node --env-file=.env.local scripts/migrate.mjs",
+    "db:migrate:test": "node --env-file=.env.local scripts/migrate.mjs --test",
+    "accounts": "node --env-file=.env.local scripts/accounts.mjs"
+  },
+  "dependencies": {
+    "@gsap/react": "2.1.2",
+    "better-auth": "1.7.9",
+    "gsap": "3.15.0",
+    "lenis": "1.3.26",
+    "lucide-react": "1.53.0",
+    "mysql2": "3.24.6",
+    "next": "16.4.0",
+    "pdf-lib": "1.17.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "sharp": "0.35.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "24.13.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3"
+  }
+}

@@ -1,0 +1,11 @@
+import "server-only";
+import { unstable_cache } from "next/cache";
+import { isDatabaseConfigured } from "./database";
+import { getCmsService } from "./cms";
+const namespace = `${process.env.DATABASE_HOST}:${process.env.DATABASE_PORT}/${process.env.DATABASE_NAME}/${process.env.ANNUR_TEST_RUN_ID || ""}`;
+const one = unstable_cache((type: string, key: string) => getCmsService().publicByKey(type, key), ["annur-cms", namespace], { tags: ["school-cms"], revalidate: 300 });
+const list = unstable_cache((type: string) => getCmsService().listPublic(type), ["annur-cms-list", namespace], { tags: ["school-cms"], revalidate: 300 });
+export const getPublicCms = (type: string, key = "main") => isDatabaseConfigured() ? one(type, key) : Promise.resolve(null);
+export const getPublicCmsList = (type: string) => isDatabaseConfigured() ? list(type) : Promise.resolve([]);
+const presence = unstable_cache((type: string, key: string) => getCmsService().exists(type, key), ["annur-cms-exists", namespace], { tags: ["school-cms"], revalidate: 300 });
+export const hasCmsEntry = (type: string, key = "main") => isDatabaseConfigured() ? presence(type, key) : Promise.resolve(false);

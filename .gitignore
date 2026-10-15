@@ -33,3 +33,12 @@ GEMINI.md
 .github/copilot-instructions.md
 docs/superpowers/
 graphify-out/
+**/CLAUDE.md
+**/GEMINI.md
+**/SKILL.md
+.github/instructions/
+.github/prompts/
+.opencode/
+.aider*
+.cursorrules
+.windsurfrules
