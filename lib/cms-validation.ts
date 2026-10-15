@@ -1,4 +1,5 @@
 import { defaultHome } from "./cms-defaults.ts";
+import { sitePath } from "./site-path.ts";
 export type CmsPayload = Record<string, any>;
 export type Field = {
     label: string;
@@ -38,7 +39,7 @@ cmsSchemas.home.fields.quickLinks = { label: "Akses cepat dalam hero", type: "li
 cmsSchemas.settings.fields.footerLinks = { label: "Tautan footer", type: "list", max: 20, fields: { group: { label: "Kolom", type: "select", options: ["quick", "info"] }, label: text("Label"), href: text("URL internal", 180) } };
 const assets = ["school.jpg", "classroom.jpg", "lab.jpg", "study-illustration.jpg", "teacher-placeholder.svg", "logo.png"];
 export function imageUrl(value: string) {
-    return value?.startsWith("/media/") ? value : `/images/${assets.includes(value) ? value : "school.jpg"}`;
+    return sitePath(value?.startsWith("/media/") ? value : `/images/${assets.includes(value) ? value : "school.jpg"}`);
 }
 export function parseCmsInput(type: string, value: unknown): CmsPayload {
     const schema = cmsSchemas[type];

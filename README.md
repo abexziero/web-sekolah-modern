@@ -14,7 +14,7 @@ Portal informasi dan CMS untuk **Madrasah Aliyah Annur Samarinda**, dengan tampi
 ![MariaDB](https://img.shields.io/badge/MariaDB-11.8-315943?style=flat-square&logo=mariadb)
 ![GSAP](https://img.shields.io/badge/GSAP-3-A8C3AD?style=flat-square)
 
-[Fitur](#fitur) · [Pratinjau](#pratinjau) · [Mulai](#mulai) · [Panduan CMS](#panduan-cms) · [Pengujian](#pengujian)
+[Lihat demo](https://abexziero.github.io/web-sekolah-modern/) · [Fitur](#fitur) · [Pratinjau](#pratinjau) · [Mulai](#mulai) · [Panduan CMS](#panduan-cms) · [Pengujian](#pengujian)
 
 </div>
 
@@ -25,6 +25,10 @@ Portal informasi dan CMS untuk **Madrasah Aliyah Annur Samarinda**, dengan tampi
 ![Pratinjau beranda desktop](docs/assets/preview-desktop.webp)
 
 > Palet sage, cream, dan forest; tipografi modern; foto sekolah; serta perpindahan section dengan parallax. Sebagian materi masih berupa contoh yang perlu disahkan sekolah.
+
+**[Buka preview website →](https://abexziero.github.io/web-sekolah-modern/)**
+
+Preview GitHub Pages menampilkan halaman publik dan berita contoh. Dashboard, login, database, serta media privat memerlukan aplikasi Next.js pada server.
 
 ## Fitur
 
@@ -125,6 +129,19 @@ Untuk server publik, atur environment, domain, HTTPS, reverse proxy, dan backup 
 ## Panduan CMS
 
 <details>
+<summary><strong>Build preview GitHub Pages</strong></summary>
+
+```bash
+npm run build:pages
+```
+
+Build menghasilkan situs statis di `.npm-cache/pages-build/out`. Proses ini menyalin sumber tampilan publik ke direktori terpisah, memakai konten contoh, dan mengecualikan konfigurasi rahasia serta route dashboard/API. URL aset dan tautan mendukung subfolder repository. Preview memakai `noindex`.
+
+Workflow `.github/workflows/pages.yml` membangun dan menerbitkan ulang preview ketika `main` diperbarui. Pengaturan Pages memakai sumber **GitHub Actions**. Build server biasa tetap memakai `npm run build`.
+
+</details>
+
+<details>
 <summary><strong>Saya baru pertama kali mengelola website</strong></summary>
 
 1. Buka **Panduan persiapan website** di dashboard.
@@ -201,7 +218,7 @@ npm run build
 
 Playwright menggunakan Chrome lokal. Server tes publik memakai port `3100`; dashboard memakai `3101`.
 
-**Verifikasi lokal terakhir:** 22 tes unit, 15 integrasi database, 14 browser dashboard, dan 34 browser publik lolos — **85 skenario**. Build dan pemeriksaan TypeScript juga berhasil. Hasil ini bukan hasil pengujian hosting produksi.
+**Verifikasi CMS sebelum penambahan preview:** 22 tes unit, 15 integrasi database, 14 browser dashboard, dan 34 browser publik lolos — **85 skenario**. Build dan pemeriksaan TypeScript juga berhasil. Hasil ini bukan hasil pengujian hosting produksi.
 
 ## Struktur proyek
 

@@ -7,6 +7,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState, type AnimationEvent } from "react";
 import { useSiteConfig } from "./site-config";
 import { imageUrl } from "@/lib/cms-validation";
+import { sitePath } from "@/lib/site-path";
 import { navigation, schoolPages } from "@/lib/school-pages";
 import { jQueryFactory } from "./vendor/jquery.factory.slim.module.js";
 
@@ -94,7 +95,7 @@ export function SiteHeader() {
             </div>)}
           </div>
         </details>
-      ) : <a href={item.href} key={item.label} data-nav-section={item.section} onClick={closeMenus}>{item.label}</a>)}
+      ) : <a href={item.href ? sitePath(item.href) : undefined} key={item.label} data-nav-section={item.section} onClick={closeMenus}>{item.label}</a>)}
     </nav>;
   }
 
@@ -114,7 +115,7 @@ export function SiteHeader() {
       }}>
         <span className="scroll-progress" aria-hidden="true" />
         <div className="container-wrap flex min-h-22 items-center justify-between gap-6">
-          <a href="/#beranda" className="brand" onClick={closeMenus}>
+          <a href={sitePath("/#beranda")} className="brand" onClick={closeMenus}>
             <Image unoptimized src={imageUrl(settings?.logo || "logo.png")} alt="" width={552} height={432} sizes="60px" className="h-12 w-15 object-contain" />
             <span className="flex flex-col gap-0.5"><strong>{settings?.shortName||"MA ANNUR"}</strong><span className="brand-caption">{settings?.caption||"MADRASAH ALIYAH · SAMARINDA"}</span></span>
           </a>
