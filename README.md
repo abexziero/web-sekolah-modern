@@ -18,7 +18,7 @@ Portal informasi dan CMS untuk **Madrasah Aliyah Annur Samarinda**, dengan tampi
 
 </div>
 
-> **Status repositori:** dokumentasi dan pratinjau tersedia. Kode aplikasi belum dipublikasikan.
+> **Status repositori:** dokumentasi dan pratinjau tersedia. Kode aplikasi belum dipublikasikan. Panduan instalasi di bawah berlaku setelah kode tersedia.
 
 ---
 
@@ -220,8 +220,8 @@ tests/        Pengujian unit, integrasi database, dan browser
 ## Aset dan atribusi
 
 - Identitas serta foto madrasah digunakan untuk implementasi MA Annur Samarinda; penggunaan ulang memerlukan izin pemilik terkait.
-- Foto ilustrasi Pexels: [kredit dan sumber](public/images/stock-credits.md).
-- Font Geist: [SIL Open Font License](public/fonts/OFL.txt).
+- Foto ilustrasi Pexels: kredit dan sumber disertakan pada aset aplikasi.
+- Font Geist: SIL Open Font License.
 - Komponen visual diadaptasi dari React Bits; atribusi sumber berada pada komponen terkait.
 - Kode aplikasi belum diberi lisensi distribusi. Dependency dan aset pihak ketiga mengikuti lisensinya masing-masing.
 

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+<title id="title">Web Sekolah Modern</title><desc id="desc">Website dan CMS sekolah. Informasi, inspirasi, dan kemudahan pengelolaan dalam palet hijau lembut.</desc>
+<style>.line{stroke-dasharray:260;animation:draw 5s ease-in-out infinite alternate}.dot{animation:float 4s ease-in-out infinite alternate}@keyframes draw{from{stroke-dashoffset:60}to{stroke-dashoffset:0}}@keyframes float{from{transform:translateY(0)}to{transform:translateY(-10px)}}@media(prefers-reduced-motion:reduce){.line,.dot{animation:none}}</style>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#EAF3EC"/><stop offset="1" stop-color="#E7EFF5"/></linearGradient></defs>
+<rect width="1280" height="360" rx="22" fill="url(#bg)"/>
+<circle cx="1170" cy="40" r="210" fill="#A8C3AD" opacity=".25"/>
+<circle cx="1050" cy="370" r="190" fill="#315943" opacity=".07"/>
+<path d="M0 318 Q300 270 610 320 T1280 300 V360 H0Z" fill="#A8C3AD" opacity=".24"/>
+<g font-family="Segoe UI,Arial,sans-serif" fill="#315943">
+<text x="66" y="83" font-size="14" letter-spacing="4">EDUCATION / WEB EXPERIENCE</text>
+<text x="62" y="158" font-size="62" font-weight="700" letter-spacing="-2">Web Sekolah</text>
+<text x="62" y="225" font-size="62" font-weight="700" letter-spacing="-2">Modern.</text>
+<text x="66" y="274" font-size="19" fill="#536458">Informasi lebih dekat. Pengelolaan lebih mudah.</text>
+</g>
+<g transform="translate(860 72)" fill="none" stroke="#315943" stroke-width="4" stroke-linejoin="round">
+<rect x="-22" y="-12" width="292" height="232" rx="20" fill="#FAFBF8" stroke="#A8C3AD"/>
+<path d="M-22 22H270" stroke="#A8C3AD"/>
+<g fill="#A8C3AD" stroke="none"><circle cx="-3" cy="5" r="4"/><circle cx="12" cy="5" r="4"/><circle cx="27" cy="5" r="4"/></g>
+<path class="line" d="M32 92L125 47l93 45M50 85v92h150V85M105 177v-45h40v45"/>
+<path d="M73 108h13v17H73zM164 108h13v17h-13zM73 143h13v17H73zM164 143h13v17h-13z" stroke-width="3"/>
+<path d="M121 59v-21h32l-9 10 9 10h-32" stroke-width="3"/>
+</g>
+<g class="dot" fill="#315943"><circle cx="824" cy="86" r="5"/><circle cx="1169" cy="280" r="7"/></g>
+</svg>
